@@ -7,34 +7,38 @@
     <div class="modal-body">
 
     <form action="/results" method="POST" accept-charset="utf-8" class="form-inline">
-        <label for="incidentType">Incident Type: </label>
-        <select name="incidentType" form="incidentForm">
+        <label for="name" class="modal-label">Your name: </label>
+        <input type="text" id="name" name="name" class="form-control modal-input" placeholder="Your full name (optional)"></input><br>
+        <label for="incidentType" class="modal-label">Incident Type: </label>
+        <select name="incidentType" form="incidentForm" class="form-control modal-input">
             <% @incident_types.each do |t| %>
             <option value="<%= t %>"><%= t %></option>
             <% end %>
         </select><br>
-        <label for="peopleInvolved">People involved: </label>
-        <input type="text" id="peopleInvolved" name="peopleInvolved"></input><br>
-        <label for="observers">Other observers: </label>
-        <input type="text" id="observers" name="observers"></input><br>
-        <label for="appt-time">Time: </label>
-        <input type="time" id="appt-time" name="appt-time" /><br>
-        <label for="locations">Location: </label>
-        <select name="locations" form="incidentForm">
+        <label for="peopleInvolved" class="modal-label">People involved: </label>
+        <input type="text" id="peopleInvolved" name="peopleInvolved" class="form-control modal-input"></input><br>
+        <label for="observers" class="modal-label">Other observers: </label>
+        <input type="text" id="observers" name="observers" class="form-control modal-input"></input><br>
+        <label for="appt-time" class="modal-label">Time: </label>
+        <input type="time" id="appt-time" name="appt-time" class="form-control modal-input" placeholder="approx hr/min"/><br>
+        <label for="locations" class="modal-label">Location: </label>
+        <select name="locations" form="incidentForm" class="form-control modal-input">
             <% @locations.each do |l| %>
             <option value="<%= l %>"><%= l %></option>
             <% end %>
         </select><br>
-        <label for="description"><%= @text_label %></label>
-        <textarea id="description" name="description" placeholder="<%= @text_placeholder %>" required></textarea><br>
-        <input id="f02" type="file" name="file" accept="image/*, video/*" multiple/><br>
-        <button type="submit" value="Submit" class="btn btn-primary btn-block btn-stretch" style="background-color: #8ab82e!important;">Submit</button>
-    </form>
+        <label for="description" class="modal-label"><%= @text_label %>:</label>
+        <input type="text" id="description" name="description" placeholder="Required" class="form-control modal-input" required></input><br>
+        <input id="f02" type="file" name="file" accept="image/*, video/*" style="visibility: hidden" multiple/>
+		<button class="btn btn-secondary" type="button"><label for="f02" style="cursor: pointer; font-weight: 300!important"><%= @button_label %></label></button><br><br>
 
 
     </div>
     <div class="modal-footer">
+            <button type="submit" value="Submit" class="btn btn-primary btn-block btn-stretch" style="display: inline; background-color: #8ab82e!important;">Submit</button>
+        
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </form>
     </div>
 </div>
     

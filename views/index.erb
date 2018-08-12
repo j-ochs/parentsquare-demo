@@ -12,11 +12,11 @@
 	<h4><%= @header %></h4>
 	<form action="/results" method="POST" accept-charset="utf-8" class="input-form">
 		<%= @text_label %>
-		<textarea class="text-input" id="description" name="description" placeholder="<%= @text_placeholder %>" style="height:25%" required></textarea><br><br>
-		<input id="f02" type="file" name="file" accept="image/*, video/*" multiple/><br>
+		<textarea class="text-input" id="description" name="description" placeholder="<%= @text_placeholder %>" style="height:25%" required></textarea><br>
+		<!-- <input id="f02" type="file" name="file" accept="image/*, video/*" title="<%= @button_label %>" multiple/><br> -->
+		<input id="f02" type="file" name="file" accept="image/*, video/*" style="visibility: hidden" multiple/>
+		<button class="btn btn-secondary" type="button"><label for="f02" style="cursor: pointer; font-weight: 300!important"><%= @button_label %></label></button><br><br>
 		<button type="submit" value="Submit" class="btn btn-primary btn-block btn-stretch" style="background-color: #8ab82e!important;">Submit</button>
-		<!-- <input id="f02" type="file" name="file" accept="image/*, video/*" style="visibility: hidden" multiple/>
-		<button class="btn btn-light" type="button"><label for="f02"><%= @button_label %></label></button> -->
 	</form>
 
 	<div style="text-align:center">

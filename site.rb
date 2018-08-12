@@ -18,8 +18,9 @@ end
 post '/results' do
   @title = "Let Know"
   @header = "Don't Worry. Report Anonymously."
-  description = params[:description] || "ERROR"
-  file = params[:file] || "ERROR"
+  name = params[:name] || "null"
+  description = params[:description] || "null"
+  file = params[:file] || "null"
 
   erb :results, :locals => {'description' => description, 'file' => file}
 end
