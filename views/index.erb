@@ -9,17 +9,17 @@
 		<div class="right-column">
 			<div>
 				<img src="../images/ps_reporting_icon.png" class="icon-right"/>
-				<h1 style="font-weight: bold; font-size: 2.5em"><%= @title %></h1>
+				<h1 class="title"><%= @title %></h1>
 			</div>
 			
 
 			<h4><%= @header %></h4>
-			<form action="/hello/" method="POST" accept-charset="utf-8" class="input-form">
+			<form action="/results" method="POST" accept-charset="utf-8" class="input-form">
 				<%= @text_label %>
 					<!-- <input type="text" name="apikey" placeholder="<%= @text_placeholder %>" /><br> -->
-					<textarea id="subject" name="subject" placeholder="<%= @text_placeholder %>" style="height:25%"></textarea><br><br>
+					<textarea id="description" name="description" placeholder="<%= @text_placeholder %>" style="height:25%"></textarea><br><br>
 					<input id="f02" type="file" name="file" accept="image/*, video/*" multiple/><br>
-					<button type="submit" value="Submit" class="btn btn-primary btn-block" style="background-color: #8ab82e!important;">Submit</button>
+					<button type="submit" value="Submit" class="btn btn-primary btn-block btn-stretch" style="background-color: #8ab82e!important;">Submit</button>
 					<!-- <input id="f02" type="file" name="file" accept="image/*, video/*" style="visibility: hidden" multiple/>
 					<button class="btn btn-light" type="button"><label for="f02"><%= @button_label %></label></button> -->
 			</form>
@@ -35,9 +35,9 @@
 
 
 
-			<div>
+			<div style="text-align:center">
 					<span><%= @detail_label %></span>
-					<button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#myModal">Let's Start</button>
+					<button type="button" class="btn btn-secondary btn-block btn-stretch" data-toggle="modal" data-target="#myModal" style="margin-top:10px">Let's Start</button>
 				  
 					<!-- Modal -->
 					<div class="modal fade" id="myModal" role="dialog">

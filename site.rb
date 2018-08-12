@@ -19,12 +19,13 @@ get '/detail' do
   erb :detailed_form
 end
 
-post '/detail' do
-  greeting = params[:greeting] || "Hi There"
-  name = params[:name] || "Nobody"
+post '/results' do
+  description = params[:description] || "ERROR"
+  file = params[:file] || "ERROR"
 
-  erb :index, :locals => {'greeting' => greeting, 'name' => name}
+  erb :results, :locals => {'description' => description, 'file' => file}
 end
+
 
 
 get "/about" do
