@@ -1,0 +1,40 @@
+<!-- Detailed Report Modal -->
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Detailed Report</h4>
+    </div>
+    <div class="modal-body">
+
+    <form action="/results" method="POST" accept-charset="utf-8" class="form-inline">
+        <label for="incidentType">Incident Type: </label>
+        <select name="incidentType" form="incidentForm">
+            <% @incident_types.each do |t| %>
+            <option value="<%= t %>"><%= t %></option>
+            <% end %>
+        </select><br>
+        <label for="peopleInvolved">People involved: </label>
+        <input type="text" id="peopleInvolved" name="peopleInvolved"></input><br>
+        <label for="observers">Other observers: </label>
+        <input type="text" id="observers" name="observers"></input><br>
+        <label for="appt-time">Time: </label>
+        <input type="time" id="appt-time" name="appt-time" /><br>
+        <label for="locations">Location: </label>
+        <select name="locations" form="incidentForm">
+            <% @locations.each do |l| %>
+            <option value="<%= l %>"><%= l %></option>
+            <% end %>
+        </select><br>
+        <label for="description"><%= @text_label %></label>
+        <textarea id="description" name="description" placeholder="<%= @text_placeholder %>" required></textarea><br>
+        <input id="f02" type="file" name="file" accept="image/*, video/*" multiple/><br>
+        <button type="submit" value="Submit" class="btn btn-primary btn-block btn-stretch" style="background-color: #8ab82e!important;">Submit</button>
+    </form>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>
+    
